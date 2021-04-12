@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 :root{
   --main-input-color:  rgb(120, 140, 253);
   --focus-input-color: rgb(16, 76, 241);
 }
 
 *{
-  font-family: sans-serif, Arial;
+  font-family: 'Ubuntu', sans-serif, Arial;
 }
 
 body{
   font-size: 20px;
-  padding: 10px 30px;
+  padding: 0 30px;
   box-sizing: border-box;
 }
 
@@ -20,13 +22,17 @@ input{
   font-size: 1.2rem;
   line-height: 1.8rem;
   outline: none;
-  padding: 0 2%;
-  width: calc(96%);
+  padding: 0 1%;
+  width: calc(98%);
   transition: ease-out border-color 0.2s;
 }
 
 input:focus{
   border: 2px solid var(--focus-input-color);
+}
+
+ol{
+  padding: 0;
 }
 
 .card-container{
@@ -45,10 +51,10 @@ input:focus{
 .card img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   object-fit: cover;
 }
-/* 
+
 .card:first-child{
   grid-column: 1 / 3;
   grid-row: 1 / 3;
@@ -56,7 +62,34 @@ input:focus{
 
 .card:nth-child(5){
   grid-column: 3 / 5;
-} */
+}
+
+@media screen and (max-width: 900px){
+  .card-container{
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(2, 150px);
+  }
+  .card:first-child{
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+  
+  .card:nth-child(5){
+    grid-column: 3 / 3;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .card-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .card-container{
+    display: block;
+  }
+}
 
 
 
